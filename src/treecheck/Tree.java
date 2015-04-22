@@ -106,25 +106,11 @@ public class Tree
 	
 	public int min()
 	{
-		if(leftBranch == null)
-		{
-			return value;
-		}
-		else
-		{
-			return leftBranch.min();
-		}
+		return leftBranch == null ? value : leftBranch.min();
 	}
 	
 	public int max()
 	{
-		if(rightBranch == null)
-		{
-			return value;
-		}
-		else
-		{
-			return rightBranch.max();
-		}
+		return rightBranch == null ? value : rightBranch.max();
 	}
 }
