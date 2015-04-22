@@ -5,8 +5,7 @@ public class Tree
 	private int value;
 	private Tree leftBranch;
 	private Tree rightBranch;
-	
-	
+		
 	Tree(int value)
 	{
 		this.value = value;
@@ -104,5 +103,28 @@ public class Tree
 		
 		return avlTree;
 	}
-
+	
+	public int min()
+	{
+		if(leftBranch == null)
+		{
+			return value;
+		}
+		else
+		{
+			return leftBranch.min();
+		}
+	}
+	
+	public int max()
+	{
+		if(rightBranch == null)
+		{
+			return value;
+		}
+		else
+		{
+			return rightBranch.max();
+		}
+	}
 }
