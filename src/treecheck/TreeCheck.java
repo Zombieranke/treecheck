@@ -38,13 +38,12 @@ public class TreeCheck
 		}
 		if(tr.isBalanced())
 		{
-			System.out.print("AVL: yes");
+			System.out.println("AVL: yes");
 		}
 		else
 		{
-			System.out.print("AVL: no");
+			System.out.println("AVL: no");
 		}
-		System.out.println();
-		System.out.print("min: "+tr.min()+", max: "+tr.max()+", avg: "+tr.average());
+		System.out.println("min: "+tr.min()+", max: "+tr.max()+", avg: "+tr.average());
 	}
 }
