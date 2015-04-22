@@ -113,4 +113,54 @@ public class Tree
 	{
 		return rightBranch == null ? value : rightBranch.max();
 	}
+	
+	public double average()
+	{
+		double sum = (double) this.sum();
+		double count = (double) this.count();
+		return sum/count;
+	}
+	
+	public int sum()
+	{
+		int sum = value;
+		
+		if(leftBranch != null)
+		{
+			sum += leftBranch.sum();
+		}
+		
+		if(rightBranch != null)
+		{
+			sum += rightBranch.sum();
+		}
+		
+		return sum;
+	}
+	
+	public int count()
+	{
+		int count = 1;
+		
+		if(leftBranch != null)
+		{
+			count += leftBranch.count();
+		}
+		
+		if(rightBranch != null)
+		{
+			count += rightBranch.count();
+		}
+		
+		return count;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
