@@ -15,7 +15,7 @@ public class Tree
 
 	public void addNode(int value)
 	{
-		if(this.value < value)
+		if(this.value > value)
 		{
 			if(leftBranch == null)
 			{
@@ -26,7 +26,7 @@ public class Tree
 				leftBranch.addNode(value);
 			}
 		}
-		else if(this.value > value)
+		else if(this.value < value)
 		{
 			if(rightBranch == null)
 			{
@@ -74,23 +74,22 @@ public class Tree
 		int balance = 0;
 		int heightLeft = 0;
 		int heightRight = 0;
-		
-	
-		if(leftBranch != null)
-		{
-			avlLeft = leftBranch.isBalanced();
-			heightLeft = leftBranch.getHeight();
-		}
 			
 		if(rightBranch != null)
 		{
 			avlRight = rightBranch.isBalanced();
 			heightRight = rightBranch.getHeight();
 		}
+		
+		if(leftBranch != null)
+		{
+			avlLeft = leftBranch.isBalanced();
+			heightLeft = leftBranch.getHeight();
+		}
 
 		avlTree = avlLeft && avlRight;
 		
-		balance = heightLeft - heightRight;
+		balance = heightRight - heightLeft;
 		
 		System.out.print("bal("+value+") = "+balance);
 		
