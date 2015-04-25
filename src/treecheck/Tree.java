@@ -44,7 +44,6 @@ public class Tree
 		
 	}	
 	
-	
 	public int getHeight()
 	{
 		int heightLeft = 0;
@@ -153,13 +152,4 @@ public class Tree
 		
 		return count;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
