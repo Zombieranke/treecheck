@@ -1,18 +1,38 @@
 package treecheck;
 
+/**Implementation of a tree node
+ * 
+ * @author Christoph Majcen and Arthur Bouz
+ */
 public class Tree
 {
+	/**Value of the node
+	 */
 	private int value;
+	
+	/**The left branch of the tree with this node as root
+	 */
 	private Tree leftBranch;
+	
+	/**The right branch of the tree with this node as root
+	 */
 	private Tree rightBranch;
-		
+
+	/**Constructs a new tree node
+	 * 
+	 * @param value The value of this node
+	 */
 	Tree(int value)
 	{
 		this.value = value;
 		leftBranch = null;
 		rightBranch = null;
 	}
-
+	
+	/**Adds a node with given value to this tree
+	 * 
+	 * @param value The value of the node to add
+	 */
 	public void addNode(int value)
 	{
 		if(this.value > value)
@@ -44,6 +64,10 @@ public class Tree
 		
 	}	
 	
+	/**Gets the height of this tree
+	 * 
+	 * @return The height
+	 */
 	public int getHeight()
 	{
 		int heightLeft = 0;
@@ -65,6 +89,10 @@ public class Tree
 		return 1 + maximum;
 	}
 	
+	/**Checks whether this tree is balanced
+	 * 
+	 * @return True if balanced, false if not
+	 */
 	public boolean isBalanced()
 	{
 		boolean avlTree = true;
@@ -102,16 +130,28 @@ public class Tree
 		return avlTree;
 	}
 	
+	/**Retrieves the minimum value of this tree
+	 * 
+	 * @return The minimum value
+	 */
 	public int min()
 	{
 		return leftBranch == null ? value : leftBranch.min();
 	}
 	
+	/**Retrieves the maximum value of this tree
+	 * 
+	 * @return The maximum value
+	 */
 	public int max()
 	{
 		return rightBranch == null ? value : rightBranch.max();
 	}
 	
+	/**Calculates the average value of this tree
+	 * 
+	 * @return The average value
+	 */
 	public double average()
 	{
 		double sum = (double) this.sum();
@@ -119,6 +159,10 @@ public class Tree
 		return sum/count;
 	}
 	
+	/**Calculates the sum of all nodes of this tree
+	 * 
+	 * @return The sum of all nodes
+	 */
 	public int sum()
 	{
 		int sum = value;
@@ -136,6 +180,10 @@ public class Tree
 		return sum;
 	}
 	
+	/**Counts the nodes of the tree
+	 * 
+	 * @return The count of nodes
+	 */
 	public int count()
 	{
 		int count = 1;

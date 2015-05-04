@@ -12,9 +12,11 @@ public class TreeCheck
 	{
 		if ((args.length < 1) || (args.length > 1))
 		{
-			System.out.println("Not the right amount of arguments! Aborting!");
+			System.out.println("USAGE: treecheck <Path to textfile>");
 			return;
 		}
+		
+		//Read file
 		try
 		{
 			Scanner sc = new Scanner(Paths.get(args[0], new String[0]));
@@ -36,6 +38,8 @@ public class TreeCheck
 		{
 			e.printStackTrace();
 		}
+		
+		//Checks and statistics
 		if(tr.isBalanced())
 		{
 			System.out.println("AVL: yes");
