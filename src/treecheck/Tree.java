@@ -165,7 +165,7 @@ public class Tree
 	 */
 	public int sum()
 	{
-		int sum = value;
+		int sum = 0;
 		
 		if(leftBranch != null)
 		{
@@ -177,7 +177,7 @@ public class Tree
 			sum += rightBranch.sum();
 		}
 		
-		return sum;
+		return sum + value;
 	}
 	
 	/**Counts the nodes of the tree
@@ -186,7 +186,7 @@ public class Tree
 	 */
 	public int count()
 	{
-		int count = 1;
+		int count = 0;
 		
 		if(leftBranch != null)
 		{
@@ -198,6 +198,6 @@ public class Tree
 			count += rightBranch.count();
 		}
 		
-		return count;
+		return count + 1;
 	}
 }
